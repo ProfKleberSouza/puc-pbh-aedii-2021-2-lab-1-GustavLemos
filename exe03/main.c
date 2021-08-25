@@ -1,18 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "functions.h"
 
-int main() {
+int main(){
 
-    int a, b, s;
-  
-  // ENTRADA DE DADOS
-  scanf("%d %d", &a, &b);
+    int nSize = 0;
+    int maior,menor;
 
-  // PROCESSAMENTO - EXECUTANDO A FUNCAO
-  s = somar(a, b);
+    //input nSize
+    scanf("%d",&nSize);
 
-  // SAIDA - IMPRIMINDO O RESULTADO
-  printf("SOMA = %d\n", s);
+    int arrayN[nSize];
 
-  return(0);
+    // inputs in array
+    for(int i = 0; i < nSize; i++){
+       scanf("\n%d",&arrayN[i]);
+    }
+
+    //process
+    menor_maior(arrayN, nSize, &menor, &maior);
+
+    //output
+    printf("MENOR = %d\nMAIOR = %d", menor,maior);
+
+    return 0;
 }
